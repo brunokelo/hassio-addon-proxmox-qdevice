@@ -1,5 +1,5 @@
 name: "Proxmox QDevice"
-version: "1.0.2"
+version: "1.0.3"
 description: "QDevice para quorum do cluster Proxmox"
 slug: "proxmox_qdevice"
 startup: services

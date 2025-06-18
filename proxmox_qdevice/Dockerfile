@@ -11,6 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY run.sh /run.sh
+COPY qnetd.conf /etc/corosync/qnetd/qnetd.conf
 RUN chmod +x /run.sh
 
 CMD ["/run.sh"]
