@@ -1,7 +1,7 @@
 FROM debian:bookworm
 
 RUN apt-get update && \
-    apt-get install -y corosync-qnetd corosync-qdevice iproute2 net-tools && \
+    apt-get install -y corosync-qnetd corosync-qdevice iproute2 net-tools procps && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
