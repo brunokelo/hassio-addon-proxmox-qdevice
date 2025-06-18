@@ -1,5 +1,5 @@
 name: "Proxmox QDevice"
-version: "1.0.6"
+version: "1.0.7"
 slug: "proxmox_qdevice"
 description: "QDevice para quorum do cluster Proxmox com chave pública SSH e porta configurável"
 startup: services
@@ -12,8 +12,8 @@ arch:
   - amd64
 options:
   listen_address: "0.0.0.0"
-  ssh_public_key: ""
-  ssh_port: 2222
+  ssh_public_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDsJqEkDWvjF6iRoJr8lvrHcNMEPKxFP/XeSNIbtq7mJnaKJL13p6VkCnsBhCR0xU7MdIV7d0ccgYTvzFUwIZVs9OGrj81xFYBvIzVgw8CqPRE+UeP0b4Bc8PaVTFxIvBZlH84u0u2wr+aLumCo6kc8lP+HhfJ3Sq5i49WMMhgIDd+3j8wlgCFbWI91uUYgGoNBh5yj90PA83vbxvqc7zl6sJeL0Yk43vrcCYDMXKEDgpYhTcHOnEkdKo7Ob6zqEQn4/eRVwuv3/4JFibbCN7eXGKe/CrxvbFCWl5Anr4qSHPEsov6ydZSlFcaRZ7bAV3vsyd8BdXxJPHbkZm6PVGnQPZCV82aL/gNQs5OXV7mCpzNhdxxFjfgN2rdys+TZFq/tuhEYt+pq1wiw/pgFbEQFiw0orS14biaD4jLqkj/3Pxp6NztScMy+ijmpazXJWa1sBb5mSb69zX56nD8FPL10X+r7O2be8/LbNto/EnUNMF1nj3iNKj413JO5C17anfLnPWtXj5whmjhJ6B5k+xw0cNNxZI1+0XMOVhBv6RDEP6KT9ON/HvVFyCR0fGsSi2zt29yfjezzdVDeCTxbeolUmUSL3M8fDiOm7JLt71GOcxwPDGwXg7pobKQfWojDlLbp1XCzMCmVg/vfuDptJEv4ED2LNsJGu4XgmKfrIGYOHw== root@proxmox02"
+  ssh_port: 2224
 schema:
   listen_address: str
   ssh_public_key: str
