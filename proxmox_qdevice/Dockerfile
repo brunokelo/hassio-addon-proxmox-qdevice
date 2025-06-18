@@ -9,12 +9,23 @@ RUN apt-get update && apt-get install -y \
     openssh-server && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /var/run/sshd
+# Cria diretório do SSH
+RUN mkdir -p /var/run/sshd /root/.ssh
 
-# Permite login root via chave pública (senha desabilitada)
-RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
+# Copia chave pública autorizada
+COPY ssh/authorized_keys /root/.ssh/authorized_keys
+RUN chmod 600 /root/.ssh/authorized_keys && chown root:root /root/.ssh/authorized_keys
+
+# Copia configuração fixa do SSH
+COPY sshd_config /etc/ssh/sshd_config
+
+# Copia opcional: configuração do qnetd (se existir)
 COPY qnetd.conf /etc/corosync/qnetd/qnetd.conf
+
+# Copia script de inicialização
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
+
+EXPOSE 2222
 
 CMD ["/run.sh"]
