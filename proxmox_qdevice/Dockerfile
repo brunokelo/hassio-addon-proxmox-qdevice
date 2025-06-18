@@ -1,0 +1,11 @@
+FROM debian:bookworm
+
+RUN apt-get update && \
+    apt-get install -y corosync-qnetd corosync-qdevice iproute2 net-tools && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
+
+CMD ["/run.sh"]
