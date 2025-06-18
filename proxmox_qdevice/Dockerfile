@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN mkdir /var/run/sshd
 
-# Permite login root via chave pública
+# Permite login root via chave pública (senha desabilitada)
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
 
 COPY run.sh /run.sh

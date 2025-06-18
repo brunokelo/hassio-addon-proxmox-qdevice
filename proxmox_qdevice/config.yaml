@@ -1,5 +1,5 @@
 name: "Proxmox QDevice"
-version: "1.0.5"
+version: "1.0.6"
 slug: "proxmox_qdevice"
 description: "QDevice para quorum do cluster Proxmox com chave pública SSH e porta configurável"
 startup: services

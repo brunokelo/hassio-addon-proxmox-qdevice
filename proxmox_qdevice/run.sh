@@ -1,15 +1,20 @@
 #!/bin/bash
 set -e
 
-# Porta SSH customizável, padrão 2222
+echo "DEBUG: SSH_PUBLIC_KEY=${SSH_PUBLIC_KEY}"
+echo "DEBUG: SSH_PORT=${SSH_PORT}"
+echo "DEBUG: LISTEN_ADDRESS=${LISTEN_ADDRESS}"
+
+# Define porta SSH padrão caso não informado
 SSH_PORT="${SSH_PORT:-2222}"
 
 # Ajusta sshd para rodar na porta configurada
 sed -i "s/^#Port 22/Port $SSH_PORT/" /etc/ssh/sshd_config
 
-if [ -n "$SSH_PUBLIC_KEY" ]; then
+# Configura chave pública SSH caso fornecida
+if [ -n "${SSH_PUBLIC_KEY}" ]; then
   mkdir -p /root/.ssh
-  echo "$SSH_PUBLIC_KEY" > /root/.ssh/authorized_keys
+  echo "${SSH_PUBLIC_KEY}" > /root/.ssh/authorized_keys
   chmod 700 /root/.ssh
   chmod 600 /root/.ssh/authorized_keys
   echo "Chave pública SSH configurada."
