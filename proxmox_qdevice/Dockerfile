@@ -13,7 +13,7 @@ RUN mkdir /var/run/sshd
 
 # Permite login root via chave pública (senha desabilitada)
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
-
+COPY qnetd.conf /etc/corosync/qnetd/qnetd.conf
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
