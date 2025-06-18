@@ -8,6 +8,8 @@ host_network: true
 privileged:
   - NET_ADMIN
   - SYS_ADMIN
+arch:
+  - amd64
 options:
   listen_address: "0.0.0.0"
   ssh_public_key: ""
