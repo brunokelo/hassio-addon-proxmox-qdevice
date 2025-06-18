@@ -1,3 +1,4 @@
 #!/bin/bash
-echo "Iniciando corosync-qnetd escutando em: ${listen_address}"
-exec /usr/sbin/corosync-qnetd -l "${listen_address}"
+echo "Iniciando corosync-qnetd escutando em: ${listen_address:-0.0.0.0}"
+
+/usr/bin/corosync-qnetd -l "${listen_address:-0.0.0.0}"
