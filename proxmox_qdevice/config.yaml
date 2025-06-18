@@ -12,3 +12,10 @@ options:
   listen_address: "0.0.0.0"
 schema:
   listen_address: str
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+panel_icon: mdi:server-network
+build: true
