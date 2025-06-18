@@ -1,18 +1,16 @@
 name: "Proxmox QDevice"
-version: "1.0.3"
-description: "QDevice para quorum do cluster Proxmox"
+version: "1.0.4"
 slug: "proxmox_qdevice"
+description: "QDevice para quorum do cluster Proxmox com SSH na porta 2222"
 startup: services
 boot: auto
 host_network: true
 privileged:
   - NET_ADMIN
   - SYS_ADMIN
-init: false
 options:
   listen_address: "0.0.0.0"
+  ssh_password: "changeme"
 schema:
   listen_address: str
-arch:
-  - amd64
-  - aarch64
+  ssh_password: str
